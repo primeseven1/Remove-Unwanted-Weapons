@@ -37,6 +37,12 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="src\IO\sdkKeyboard.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
+    </ClCompile>
     <ClCompile Include="src\Main\scriptMain.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../Precompiled_Headers/pch.h</PrecompiledHeaderFile>
@@ -58,6 +64,7 @@
     <ClInclude Include="include\ScriptHookV\types.h" />
     <ClInclude Include="src\IO\ini.h" />
     <ClInclude Include="src\IO\keyboard.h" />
+    <ClInclude Include="src\IO\sdkKeyboard.h" />
     <ClInclude Include="src\Main\scriptMain.h" />
     <ClInclude Include="src\Precompiled_Headers\pch.h" />
   </ItemGroup>

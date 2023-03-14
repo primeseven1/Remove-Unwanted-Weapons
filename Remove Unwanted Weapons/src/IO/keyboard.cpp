@@ -4,14 +4,14 @@
 
 void keyboardHandler()
 {
-	int key = readFromINI();
+	static int key = readFromINI();
 
 	while (1)
 	{
 		// Wait for the next frame
 		scriptWait(0);
 
-		if (GetKeyState(key) & KEY_PRESSED)
+		if (IsKeyDown(key))
 		{
 			Ped playerPedId = PLAYER::PLAYER_PED_ID();
 			Hash weapon = WEAPON::GET_SELECTED_PED_WEAPON(playerPedId);

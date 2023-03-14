@@ -19,7 +19,7 @@ int readFromINI()
 		if (line.find("key") != std::string::npos)
 		{
 			std::size_t pos = line.find("=");
-			value = line.substr(pos + 2);
+			value = line.substr(pos + 1);
 			break;
 		}
 	}

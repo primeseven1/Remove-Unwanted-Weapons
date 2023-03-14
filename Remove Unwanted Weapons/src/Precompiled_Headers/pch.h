@@ -13,6 +13,7 @@
 #include <include/ScriptHookV/main.h>
 #include <include/ScriptHookV/nativeCaller.h>
 #include <include/ScriptHookV/natives.h>
+#include <include/ScriptHookV/sdkKeyboard.h>
 #include <include/ScriptHookV/types.h>
 
 #pragma endregion

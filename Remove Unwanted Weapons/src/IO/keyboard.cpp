@@ -4,7 +4,7 @@
 
 void keyboardHandler()
 {
-	static int key = readFromINI();
+	int key = readFromINI();
 
 	while (1)
 	{

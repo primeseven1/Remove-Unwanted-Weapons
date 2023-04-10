@@ -45,5 +45,6 @@ unsigned int readFromINI()
 		return VK_F6;
 	}
 
+	// A key that is 0 or negative is not a valid key
 	return (unsigned int)key;
 }

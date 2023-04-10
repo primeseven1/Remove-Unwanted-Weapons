@@ -6,14 +6,16 @@ int readFromINI()
 {
 	// Return the default key if the file can't be opened
 	std::ifstream INI("RemoveUnwantedWeapons.ini");
-	if (!INI.is_open()) return VK_F6;
+	if (!INI.is_open()) 
+		return VK_F6;
 
 	std::string line;
 	std::string value = "";
 	while (std::getline(INI, line))
 	{
-		// Comments
-		if (line.find("//") != std::string::npos) continue;
+		// Skip any lines that contain a comment
+		if (line.find("//") != std::string::npos) 
+			continue;
 
 		// Goes through the file until it finds key
 		if (line.find("key") != std::string::npos)

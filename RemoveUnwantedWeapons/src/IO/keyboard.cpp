@@ -4,11 +4,11 @@
 
 void keyboardHandler()
 {
-	int key = readFromINI();
+	unsigned int key = (unsigned int)readFromINI();
 
 	while (1)
 	{
-		// Wait for the next frame
+		// Wait for the next frame before another itteration, otherwise the game would be very slow
 		scriptWait(0);
 
 		if (IsKeyDown(key))

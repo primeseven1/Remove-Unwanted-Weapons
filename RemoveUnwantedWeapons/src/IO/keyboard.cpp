@@ -4,7 +4,7 @@
 
 void keyboardHandler()
 {
-	unsigned int key = (unsigned int)readFromINI();
+	unsigned int key = readFromINI();
 
 	while (1)
 	{

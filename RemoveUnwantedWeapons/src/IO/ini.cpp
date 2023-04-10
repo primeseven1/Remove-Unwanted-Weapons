@@ -17,7 +17,8 @@ unsigned int readFromINI()
 		if (line.find("//") != std::string::npos) 
 			continue;
 
-		// Goes through the file until it finds the key value
+		// Goes through the file until it finds the first value matching key
+		// If there is more than one key value, it will just use the first one whether it's valid or not, if it's not valid it's just going to use F6
 		if (line.find("key") != std::string::npos)
 		{
 			std::size_t pos = line.find("=");

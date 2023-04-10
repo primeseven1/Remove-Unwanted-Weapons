@@ -17,10 +17,12 @@ void keyboardHandler()
 			Hash weapon = WEAPON::GET_SELECTED_PED_WEAPON(playerPedId);
 
 			// Do nothing if the selected weapon is unarmed
-			if (weapon == WeaponUnarmed) continue;
+			if (weapon == WeaponUnarmed) 
+				continue;
 
 			/* Remove the currently selected weapon, and set it to unarmed,
-			also a way of preventing multiple weapons from being removed at once, so no need for a cooldown */
+			also a way of preventing multiple weapons from being removed at once, 
+			so no need for a cooldown after a key has been pressed */
 			WEAPON::REMOVE_WEAPON_FROM_PED(playerPedId, weapon);
 			WEAPON::SET_CURRENT_PED_WEAPON(playerPedId, WeaponUnarmed, TRUE);
 		}

@@ -4,7 +4,7 @@
 
 unsigned int readFromINI()
 {
-	// Return the default key if the file can't be opened
+	// Return the default key if the file can't be read for some reason
 	std::ifstream INI("RemoveUnwantedWeapons.ini");
 	if (!INI.is_open()) 
 		return VK_F6;
@@ -28,7 +28,7 @@ unsigned int readFromINI()
 
 	INI.close();
 
-	// Return the default key if the key is invalid, and if the key option isn't found anywhere
+	// Return the default key if the key is invalid, or if the key option isn't found anywhere in the file and that would be logged
 	int key;
 	try
 	{

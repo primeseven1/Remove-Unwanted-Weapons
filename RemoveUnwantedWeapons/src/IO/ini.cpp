@@ -2,7 +2,7 @@
 #include "ini.h"
 #include "logging.h"
 
-int readFromINI()
+unsigned int readFromINI()
 {
 	// Return the default key if the file can't be opened
 	std::ifstream INI("RemoveUnwantedWeapons.ini");
@@ -45,5 +45,5 @@ int readFromINI()
 		return VK_F6;
 	}
 
-	return key;
+	return (unsigned int)key;
 }

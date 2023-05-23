@@ -9,6 +9,7 @@ void genLogFile(const char* loggingInfo)
     if (fopen_s(&file, "RemoveUnwantedWeapons.log", "a") != 0)
         return;
 
+    // Add the time to the log
     time_t currentTime;
     time(&currentTime);
     struct tm timeInfo;

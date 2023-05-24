@@ -14,7 +14,7 @@ uint8_t readFromINI()
 	std::string value = "";
 	while (std::getline(INI, line))
 	{
-		// Skip any lines that contain a comment, this will skip lines that have double slashes anywhere, but it's not a big deal
+		// Skip any lines that contain a comment
 		if (line.find("//") != std::string::npos) 
 			continue;
 

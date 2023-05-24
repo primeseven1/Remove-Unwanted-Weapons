@@ -34,9 +34,9 @@ uint8_t readFromINI()
 	// Return the default key if the key is invalid
 	int key;
 	try
-    {
+	{
 		key = std::stoi(value, nullptr, 10);
-    }
+	}
 	catch (const std::exception& exception)
 	{
 		std::string message = "Failed to set the key to the specified value\nException:" + static_cast<std::string>(exception.what());

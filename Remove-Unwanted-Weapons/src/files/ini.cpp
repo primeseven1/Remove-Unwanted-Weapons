@@ -14,7 +14,7 @@ uint8_t readFromINI()
 	std::string value = "";
 	while (std::getline(INI, line))
 	{
-		// Skip any lines that contain a comment, unfortunetly skips lines with any comment though
+		// Skip any lines that contain a comment, this will skip lines that have double slashes anywhere, but it's not a big deal
 		if (line.find("//") != std::string::npos) 
 			continue;
 
@@ -34,9 +34,9 @@ uint8_t readFromINI()
 	// Return the default key if the key is invalid
 	int key;
 	try
-	{
+    {
 		key = std::stoi(value, nullptr, 10);
-	}
+    }
 	catch (const std::exception& exception)
 	{
 		std::string message = "Failed to set the key to the specified value\nException:" + static_cast<std::string>(exception.what());
@@ -44,7 +44,7 @@ uint8_t readFromINI()
 		return VK_F6;
 	}
 
-	// Max key value is 255
+	// Max VK key count is 255
 	if (key > UINT8_MAX)
 	{
 		genLogFile(

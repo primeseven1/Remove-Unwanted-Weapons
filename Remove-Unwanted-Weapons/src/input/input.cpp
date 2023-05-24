@@ -13,3 +13,17 @@ void awaitKeyPress(uint8_t key)
             return;
     }
 }
+
+uint8_t awaitKeyPress(std::vector<uint8_t> keys)
+{
+    while (1)
+    {
+        waitNextFrame();
+
+        for (uint8_t key : keys)
+        {
+            if (isKeyDown(key))
+                return key;
+        }
+    }
+}

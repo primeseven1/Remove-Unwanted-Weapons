@@ -34,9 +34,9 @@ uint8_t readFromINI()
 	// Return the default key if the key is invalid, or if the key option isn't found anywhere in the file and that would be logged
 	int key;
 	try
-    {
+	{
 		key = std::stoi(value, nullptr, 10);
-    }
+	}
 	catch (...)
 	{
 		genLogFile("Failed to set the key to specified value, setting it to the defualt");

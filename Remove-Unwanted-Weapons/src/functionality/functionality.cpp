@@ -23,7 +23,7 @@ void waitForStory()
     // By checking for the player's existance in the game, that's how it knows that the game has loaded
     // That also prevents a crash if you press the selected key when the game hasn't loaded the story yet
     while (!ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()))
-		waitNextFrame();
+	waitNextFrame();
 }
 
 void mainScript()

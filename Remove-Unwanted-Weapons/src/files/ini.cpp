@@ -14,7 +14,7 @@ uint8_t readFromINI()
 	std::string value = "";
 	while (std::getline(INI, line))
 	{
-		// Skip any lines that contain a comment
+		// Skip any lines that contain a comment, unfortunetly skips lines with any comment though
 		if (line.find("//") != std::string::npos) 
 			continue;
 
@@ -44,7 +44,7 @@ uint8_t readFromINI()
 		return VK_F6;
 	}
 
-	// Max VK key count is 255
+	// Max key value is 255
 	if (key > UINT8_MAX)
 	{
 		genLogFile(

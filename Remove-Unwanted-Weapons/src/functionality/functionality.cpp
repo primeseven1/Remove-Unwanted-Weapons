@@ -21,7 +21,7 @@ static void removeCurrentPlayerWeapon()
 void waitForStory()
 {
     // By checking for the player's existance in the game, that's how it knows that the game has loaded
-    // That also prevents a crash right at the start of the game
+    // That also prevents a crash when pressing the selected key in the ini when you are not in the story mode
     while (!ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()))
 		scriptWait(0);
 }

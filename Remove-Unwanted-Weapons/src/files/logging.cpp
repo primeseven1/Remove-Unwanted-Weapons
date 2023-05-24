@@ -12,13 +12,13 @@ void genLogFile(const char* loggingInfo)
 	if (!loggingFile.is_open())
 		return;
 
-	// Get the time so that it can be logged to the file
-	auto currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-	struct tm timeInfo;
-	localtime_s(&timeInfo, &currentTime);
-	std::stringstream ss;
-	ss << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S"); // Formatting as a string
+	// Getting the current time to add to the file
+    auto currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    struct tm timeInfo;
+    localtime_s(&timeInfo, &currentTime);
+    std::stringstream ss;
+    ss << std::put_time(&timeInfo, "%Y-%m-%d %H:%M:%S");
 
-	loggingFile << loggingInfo << "| Time:" << ss.str() << "\n";
+	loggingFile << loggingInfo << "\nTimestamp: " << ss.str() << "\n\n";
 	loggingFile.close();
 }

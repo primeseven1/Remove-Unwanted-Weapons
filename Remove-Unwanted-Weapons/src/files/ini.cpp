@@ -31,17 +31,28 @@ uint8_t readFromINI()
 
 	INI.close();
 
-	// Return the default key if the key is invalid, or if the key option isn't found anywhere in the file and that would be logged
+	// Return the default key if the key is invalid
 	int key;
 	try
-	{
+    {
 		key = std::stoi(value, nullptr, 10);
-	}
-	catch (...)
+    }
+	catch (const std::exception& exception)
 	{
-		genLogFile("Failed to set the key to specified value, setting it to the defualt");
+		std::string message = "Failed to set the key to the specified value\nException:" + static_cast<std::string>(exception.what());
+		genLogFile(message.c_str()); 
 		return VK_F6;
 	}
 
-	return (uint8_t)key;
+	// Max VK key count is 255
+	if (key > UINT8_MAX)
+	{
+		genLogFile(
+			"Failed to set the key to the specified value\n"
+			"Value is bigger than 255");
+
+		return VK_F6;
+	}
+
+	return static_cast<uint8_t>(key);
 }

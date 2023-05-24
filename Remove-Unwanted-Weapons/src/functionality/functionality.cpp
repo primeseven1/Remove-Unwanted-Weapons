@@ -21,9 +21,9 @@ static void removeCurrentPlayerWeapon()
 void waitForStory()
 {
     // By checking for the player's existance in the game, that's how it knows that the game has loaded
-    // That also prevents a crash when pressing the selected key in the ini when you are not in the story mode
+    // That also prevents a crash if you press the selected key when the game hasn't loaded the story yet
     while (!ENTITY::DOES_ENTITY_EXIST(PLAYER::PLAYER_PED_ID()))
-		scriptWait(0);
+		waitNextFrame();
 }
 
 void mainScript()
@@ -32,9 +32,7 @@ void mainScript()
 
     while (1)
     {
-        /* Waiting for the next frame
-           and then removing the weapon that's selected after a key has been pressed */
-        scriptWait(0);
+        waitNextFrame();
         awaitKeyPress(key);
         removeCurrentPlayerWeapon();
     }
